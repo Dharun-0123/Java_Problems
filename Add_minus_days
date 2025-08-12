@@ -1,0 +1,17 @@
+package zoho_train;
+import java.time.*;
+import java.time.format.*;
+
+public class TRAIN {
+    public static void main(String[] args) {
+    LocalDate id=LocalDate.now();
+    
+    LocalDate future=id.plusDays(10);
+    LocalDate past=id.minusDays(20);
+    
+    System.out.println(future);
+    System.out.println(past);
+    
+    
+    }
+}
