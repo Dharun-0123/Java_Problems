@@ -1,0 +1,51 @@
+package zoho_train;
+
+import java.util.Scanner;
+
+public class Train_day1 {
+
+	@SuppressWarnings("null")
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("input: ");
+		int n = sc.nextInt();//n=number,k=roatation
+		int arr[] = new int[n];
+
+		for (int i = 0; i < n; i++) {
+			arr[i] = sc.nextInt();
+
+		}
+		System.out.println("Enter the number of rotation(k): ");
+		int k=sc.nextInt();
+		k=k%n;
+		int temp[] =new int[k];
+		
+		for(int i=0;i<k;i++) {
+			temp[i]=arr[n-k+i];
+		}
+		for(int i=n-k-1;i>=0;i--) {
+			
+			arr[k+i]=arr[i];
+		}
+		for(int i=0;i<k;i++) {
+			arr[i]=temp[i];
+		}
+		for(int aa:arr) {
+			System.out.print(aa+" ");
+		}	
+		
+		
+sc.close();
+	}
+
+}
+
+/* Input: 
+5 
+1 2 3 4 5 
+2 
+ 
+Output: 
+4 5 1 2 3 
+*/
