@@ -1,0 +1,36 @@
+package zoho_train;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Scanner;
+
+public class TRAIN {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Ask the user for birth date
+        System.out.println("----Enter your birth date----");
+        System.out.print("Year (yyyy): ");
+        int year = sc.nextInt();
+
+        System.out.print("Month (1-12): ");
+        int month = sc.nextInt();
+
+        System.out.print("Day (1-31): ");
+        int day = sc.nextInt();
+
+        // Create LocalDate objects
+        LocalDate dob = LocalDate.of(year, month, day);
+        LocalDate current = LocalDate.now();
+
+        // Calculate age
+        Period p = Period.between(dob, current);
+
+        // Display neatly
+        System.out.println("\nYour age is: " + p.getYears() + " years, " 
+                           + p.getMonths() + " months, " 
+                           + p.getDays() + " days");
+
+        sc.close();
+    }
+}
