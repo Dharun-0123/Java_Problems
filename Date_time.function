@@ -1,0 +1,53 @@
+package zoho_train;
+
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class DateeTime {
+
+	void fun() {
+		System.out.println("dharun bou");
+
+	}
+
+	static void fun1() {
+		System.out.println("static");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		LocalDate ID = LocalDate.now();
+		LocalDate MEID = LocalDate.of(2004, 2, 10);
+
+		LocalTime CurrentTime = LocalTime.now();
+		LocalTime mytime = LocalTime.of(12, 45, 50);
+
+		LocalDateTime BothdateTime = LocalDateTime.now();
+		LocalDateTime BothdateTimeof = LocalDateTime.of(2000, 2, 12, 10, 5);
+
+		System.out.println(ID);
+		System.out.println(MEID);
+		System.out.println(CurrentTime);
+		System.out.println(mytime);
+		System.out.println(BothdateTime);
+		System.out.println(BothdateTimeof);
+
+		// change the formaat to Indian
+
+		LocalDate change = LocalDate.of(2002, 5, 7);
+		DateTimeFormatter dtm = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+		System.out.println(change.format(dtm));
+
+		// 12-5-2022
+		// Tuesday 12 August 2025
+
+		LocalDate id = LocalDate.of(2025, 8, 12);
+		DateTimeFormatter dtm1 = DateTimeFormatter.ofPattern("EE dd MMMM yyyy");
+		System.out.println(change.format(dtm1));
+
+	}
+
+}
