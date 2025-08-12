@@ -1,0 +1,16 @@
+package zoho_train;
+import java.time.*;
+import java.time.format.*;
+
+public class TRAIN {
+    public static void main(String[] args) {
+        String s = "2000-5-20"; // Correct date string
+        DateTimeFormatter stm = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        // Correct usage of parse()
+        LocalDate ldm = LocalDate.parse(s, stm);
+
+        // Print in same format
+        System.out.println(ldm.format(stm)); // Output: 10-01-2014
+    }
+}
