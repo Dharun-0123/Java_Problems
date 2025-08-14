@@ -1,0 +1,27 @@
+package zoho_train;
+
+import java.util.Arrays;
+
+public class Sorting_Algorithm {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Sorting Alogorithm
+		//Bubble 
+		int arr[]= {3,1,5,10,2,7,26,0,686,666,1};
+		for(int i=0;i<arr.length;i++) {
+			for(int j=i+1;j<arr.length;j++) {
+				if(arr[i]>arr[j]) {
+					int temp=arr[i];
+					arr[i]=arr[j];
+					arr[j]=temp;
+					
+				}
+			}
+		}
+		System.out.println(Arrays.toString(arr));
+		
+
+	}
+
+}
