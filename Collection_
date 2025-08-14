@@ -1,0 +1,59 @@
+package zoho_train;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Array__ {
+	public static void main(String[] args) {
+
+		List<String> onemillion = new ArrayList<>();
+
+		for (int i = 0; i < 2; i++) {
+			onemillion.add("Arraylist-" + i);
+		}
+		for (String one : onemillion) {
+			System.out.println(one);
+		}
+		List<String> trains = new LinkedList<>();
+
+		for (int i = 0; i < 2; i++) {
+			trains.add("Dharun");
+			trains.addFirst("Harsh");
+		}
+		for (String train : trains) {
+			System.out.println(train);
+		}
+
+		Set<String> sets = new HashSet<>();
+		sets.add("ME Again");
+		sets.add("ME Again");
+		sets.add("NOW ITS NOT ME Again");
+
+		for (String set : sets) {
+			System.out.println(set);
+		}
+
+		Set<String> trees = new TreeSet<>();
+		trees.add("Light >3🌦");
+		trees.add("Light >3🌦");
+		trees.add("Dark  <3☀️");
+		for (String tree : trees) {
+			System.out.println(tree);
+		}
+
+		Map<String, String> treasureChest = new HashMap<>();
+
+		treasureChest.put("GoldenChest", "Mytical_Sword⚔️");
+		treasureChest.put("LegandaryChest", "Dragons_Rage🐉");
+
+		System.out.println(treasureChest.get("GoldenChest"));
+		System.out.println(treasureChest.get("LegandaryChest"));
+
+	}
+}
