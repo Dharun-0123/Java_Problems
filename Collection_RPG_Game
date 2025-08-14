@@ -1,0 +1,75 @@
+package zoho_train;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+
+
+	public class Array__ {
+	    public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
+
+	        // 1. ArrayList = Backpack
+	        List<String> backpack = new ArrayList<>();
+	        System.out.println("🎒 Welcome adventurer! Let's pack your backpack.");
+	        backpack.add("Health Potion ❤️");
+	        backpack.add("Iron Sword ⚔️");
+	        backpack.add("Magic Map 🗺");
+	        System.out.println("Backpack items: " + backpack);
+	        System.out.println("You grab item 2 instantly: " + backpack.get(1)); // Fast access
+
+	        // 2. LinkedList = Train passengers
+	        LinkedList<String> train = new LinkedList<>();
+	        System.out.println("\n🚂 Your train to Adventure City is empty. Who will board?");
+	        train.add("Hero");
+	        train.addFirst("Wise Old Man");
+	        train.addLast("Merchant");
+	        System.out.println("Passengers: " + train);
+	        train.remove(1); // Someone leaves from the middle
+	        System.out.println("Oh no! A passenger left: " + train);
+
+	        // 3. HashSet = VIP Guest List
+	        Set<String> vipList = new HashSet<>();
+	        System.out.println("\n🎉 Party tonight! Add VIP guests (duplicates not allowed).");
+	        addVIP(vipList, "Dragon Slayer");
+	        addVIP(vipList, "Elf Queen");
+	        addVIP(vipList, "Dragon Slayer"); // duplicate
+	        System.out.println("Final VIP list: " + vipList);
+
+	        // 4. TreeSet = Spell book
+	        Set<String> spellBook = new TreeSet<>();
+	        spellBook.add("Fireball 🔥");
+	        spellBook.add("Heal 💖");
+	        spellBook.add("Arcane Blast ✨");
+	        spellBook.add("Fireball 🔥"); // duplicate
+	        System.out.println("\n📜 Your magic spells (sorted): " + spellBook);
+
+	        // 5. HashMap = Treasure Chest
+	        Map<String, String> treasureChest = new HashMap<>();
+	        String[] loot = {"Mythical Sword ⚔️", "Golden Crown 👑", "Magic Ring 💍", "Bag of Gold 💰"};
+	        treasureChest.put("Chest1", loot[new Random().nextInt(loot.length)]);
+	        treasureChest.put("Chest2", loot[new Random().nextInt(loot.length)]);
+	        System.out.println("\n🗝 You open Chest1: " + treasureChest.get("Chest1"));
+	        System.out.println("🗝 You open Chest2: " + treasureChest.get("Chest2"));
+
+	        sc.close();
+	    }
+
+	    public static void addVIP(Set<String> vipList, String name) {
+	        if (vipList.contains(name)) {
+	            System.out.println("🚫 " + name + " tried to enter again, but the bouncer said NO!");
+	        } else {
+	            vipList.add(name);
+	            System.out.println("✅ " + name + " added to VIP list.");
+	        }
+	    }
+
+
+	}
