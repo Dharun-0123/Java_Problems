@@ -1,0 +1,49 @@
+package zoho_train;
+
+public class Cross_matrix {
+	public static void main(String[] args) {
+		int arr1[][] = { 
+				{ 1, 2 },
+				{ 1, 2 }
+				
+
+		};
+		int arr2[][] = { 
+				{ 1, 2, 3 }, 
+				{ 1, 2, 3 }, 
+				{ 1, 2, 3 }
+
+		};
+		
+		
+				int A_of_rows=arr1.length;
+				int A_of_cols=arr1[0].length;
+				int B_of_Rows=arr2.length;
+				int B_of_cols=arr2[0].length;
+				int newarr1[][]= new int[A_of_rows][B_of_cols];
+				if(A_of_cols==B_of_Rows) 
+				{ 
+					
+					for(int i=0;i<A_of_rows;i++) {
+						for(int j=0;j<B_of_cols;j++) {
+							for(int k=0;k<B_of_Rows;k++) {
+								newarr1[i][j]+=
+										arr1[i][k]*arr2[k][i];
+							}
+						}
+					}
+					for (int i = 0; i < newarr1.length; i++) {
+						for (int j = 0; j < newarr1.length; j++) {
+							System.out.print(newarr1[i][j] + " ");
+						}
+						System.out.println();
+					}
+					
+					
+				}
+				else {
+					System.out.println("Cant convert the matrix");
+				}	
+		
+	}
+}
