@@ -1,0 +1,30 @@
+package zoho_train;
+
+public class Sum_recursion {
+
+	public static void main(String[] args) {
+		
+		String str="madam";
+		int left=0;
+		int right=str.length()-1;
+		boolean ns=method(str,left,right);
+		System.out.println(ns);
+
+	}
+
+	static boolean method(String str,int left,int right) {
+		if(left>=right) {
+			return true;
+		}
+		if(str.charAt(left)!=str.charAt(right)) {
+			return true;
+		}
+		
+		
+		
+		return method(str,left+1,right-1);
+		
+		
+		
+	}
+}
