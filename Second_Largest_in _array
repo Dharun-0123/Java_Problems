@@ -1,0 +1,47 @@
+package zoho_train;
+import java.util.Scanner;
+
+
+public class Second_large_number {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter howm many no: ");
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		
+		
+		for(int i=0;i<n;i++){
+			arr[i]=sc.nextInt();
+			
+		}
+		for(int i=0;i<n;i++) {
+			int max=Integer.MAX_VALUE;
+			
+		for(int j=i+1;j<n;j++) {
+			
+				if(arr[j]<max && arr[i]<arr[j]) {
+					max=arr[j];
+				}
+				
+			}
+		if(max == Integer.MAX_VALUE) {
+			System.out.print(arr[i]+" -> -1");
+			
+		}
+		else {
+			System.out.println(arr[i] +" -> "+ max);
+		}
+		
+		}
+	
+
+	}
+
+}
+/*7 
+ * 
+2 3 7 -1 8 5 1
+ * */
