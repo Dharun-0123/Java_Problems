@@ -1,0 +1,22 @@
+package zoho_train;
+
+public class Sum_recursion {
+
+	public static void main(String[] args) {
+		method(1234);
+
+	}
+
+	static int method(int i) {
+		if (i == 0) {
+			return 0;
+		}
+
+		int d = i % 10;
+
+		method(i / 10);
+		System.out.println(d);
+		return 0;
+	}
+
+}
