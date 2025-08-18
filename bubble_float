@@ -1,0 +1,28 @@
+package zoho_train;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class Bubble_sort_arrya {
+
+	public static void main(String[] args) {
+		int arr[] = { 1, 235, 22, 5236, 12, 523, 623, 6355, 2, 4, 5 };
+		double[] sales = { 1200.5, 900.0, 1600.0, 750.0, 1300.0 };
+		for (int i = 0; i < sales.length - 1; i++) {
+			for (int j = 0; j < sales.length - 1 - i; j++) {
+				if (sales[j] < sales[j + 1]) {
+					double temp = sales[j];
+					sales[j] = sales[j + 1];
+					sales[j + 1] = temp;
+				}
+			}
+
+		}
+
+		for (double sale : sales) {
+			System.out.print(sale + " ");
+		}
+
+	}
+
+}
