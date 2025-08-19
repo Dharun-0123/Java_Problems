@@ -1,0 +1,48 @@
+package zoho_train;
+
+import java.util.Scanner;
+
+public class Reverse_an_arrary {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n, k;
+
+		System.out.println("How many numbers you want to enter:");
+		n = sc.nextInt();
+		int arr[] = new int[n];
+		System.out.println("Enter the elements");
+		for (int i = 0; i < n; i++) {
+			arr[i] = sc.nextInt();
+		}
+		System.out.println("How many position you want to sift");
+		k = sc.nextInt();
+		System.out.println(n);
+
+		System.out.println();
+		System.out.println(k);
+		k = k % n;
+		int len = arr.length;
+		reverse(arr, 0, len-1);
+		reverse(arr, 0, k - 1);
+		reverse(arr, k, len - 1);
+
+		for (int ar : arr) {
+			System.out.print(ar + " ");
+		}
+	}
+
+	private static void reverse(int[] arr, int start, int end) {
+		
+				while(start<end) {
+					int temp=arr[start];
+					arr[start]=arr[end];
+					arr[end]=temp;
+					start++;
+					end--;
+				}
+			
+		
+
+	}
+
+}
