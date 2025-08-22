@@ -1,0 +1,131 @@
+package zoho_test;
+
+import java.util.Scanner;
+
+public class new_one {
+	public static void main(String[] args) {
+//		A number is a palindrome if it reads
+//		the same forward and backward 
+//		(e.g., 121, 3443, 12321).
+		int number = 123321;
+		int number1 = 123345;
+		int len = String.valueOf(number).length();
+		int temp = number;
+		int temp1 = number1;
+		int result = 0;
+		while (temp > 0) {
+			result = result * 10 + temp % 10;
+			temp /= 10;
+
+		}
+		while (temp1 > 0) {
+			result = result * 10 + temp1 % 10;
+			temp1 /= 10;
+
+		}
+		String Answer = (result == number) ? "same" : "not";
+		String Answer1 = (result == number1) ? "same" : "not";
+		System.out.println(Answer);
+		System.out.println(Answer1);
+
+//		Sum of Digits
+//		👉 Example: 12345 → 1+2+3+4+5 = 15.
+//		Bonus: Keep summing until you get a single digit
+//		(this is called the digital root).
+
+		temp = number;
+		int sum = 0;
+		for (int i = 0; i < len; i++) {
+			sum = sum + temp % 10;
+			temp /= 10;
+		}
+		System.out.println("sum - " + sum);
+
+//		Armstrong Number
+//		👉 A number is Armstrong if:
+
+		int num = 153;
+		int amcount = String.valueOf(num).length();
+		int amtemp = num;
+		int amstrongResult = 0;
+		while (amtemp > 0) {
+			int lastdigit = amtemp % 10;
+			amstrongResult = (int) (amstrongResult + Math.pow(lastdigit, amcount));
+			amtemp /= 10;
+		}
+		boolean Res = amstrongResult == num ? true : false;
+		System.out.println(Res);
+
+//		Challenge 4: Print Patterns (Nested Loops)
+//	     *
+//	    ***
+//	   *****
+//	  *******
+
+		int n = 4;
+		for (int i = 1; i <= n; i++) {
+			for (int k = 1; k <= n - i; k++) {
+				System.out.print(" ");
+
+			}
+			for (int j = 1; j <= i * 2 - 1; j++) {
+
+				System.out.print("*");
+
+			}
+			System.out.println();
+		}
+
+//		    *
+//		   ***
+//		  *****
+//		 *******
+//		  *****
+//		   ***
+//		    *
+		int nn = 4;
+		for (int i = 1; i <= nn; i++) {
+			for (int k = 1; k <= nn - i; k++) {
+				System.out.print(" ");
+			}
+			for (int j = 1; j <= 2 * i - 1; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		for (int i = 1; i <= nn; i++) {
+			for (int k = 1; k <= i; k++) {
+				System.out.print(" ");
+			}
+			for (int j = (2 * (nn - i) - 1); j > 0; j--) {
+				System.out.print("*");
+
+			}
+			System.out.println();
+		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Fibbonnic series: ");
+		int fibnumber = sc.nextInt();
+		int a = 0, b = 1;
+		System.out.println(b);
+		if (fibnumber == 0) {
+			System.out.println(a);
+		} else if (fibnumber == 1) {
+			System.out.println(b);
+		} else {
+			System.out.print(a + " ");
+			System.out.print(b + " ");
+			for (int i = 0; i < fibnumber; i++) {
+
+				int c = a + b;
+
+				a = b;
+
+				b = c;
+
+				System.out.print(" " + c + " ");
+			}
+		}
+
+	}
+}
