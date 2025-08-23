@@ -1,0 +1,123 @@
+package zoho_test;
+
+
+public class Stage3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// . Frequency of Each Element
+//		👉 Count how many times 
+//		each number appears in the array.
+//		Example: {2, 3, 2, 4, 3} →
+//		Use nested loops OR a visited[] 
+//		boolean array to avoid recounting
+//
+//		int arr[] = { 2, 3, 2, 4, 3, 12, 124, 11, 11, 12, 2323 };
+//
+//		int n = arr.length;
+//		boolean visited[] = new boolean[n];
+//
+//		for (int i = 0; i < n; i++) {
+//			int count = 1;
+//
+//			if (visited[i])
+//				continue;
+//
+//			for (int j = i + 1; j < n; j++) {
+//				if (arr[i] == arr[j]) {
+//					count++;
+//					visited[j] = true;
+//				}
+//			}
+//			System.out.println(arr[i] + " -> " + count);
+//
+//		}
+		System.out.println();
+
+		int[] array = { 5, 1, 2, 44, 31,1, 3,3,3 };
+		int len = array.length;
+		int maxcount = 0;
+		int[] uniquefreq = new int[len];
+		int[] unique_element = new int[len];
+		int counter = 0;
+
+		for (int i = 0; i < len; i++) {
+
+			boolean counted = false;
+			int increment = 1;
+
+			for (int k = 0; k < i; k++) {
+				if (array[i] == array[k]) {
+					counted = true;
+				}
+			}
+			if (counted)
+				continue;
+
+			for (int j = i + 1; j < len; j++) {
+				if (array[i] == array[j]) {
+					increment++;
+
+				}
+
+			}
+			if (increment > maxcount) {
+				maxcount = increment;
+
+			}
+			unique_element[counter] = array[i];
+			uniquefreq[counter] = increment;
+			counter++;
+
+		}
+		for (int i = 0; i < counter; i++) {
+			for (int j = i + 1; j < counter; j++) {
+				if (uniquefreq[j] > uniquefreq[i]) {
+					int tempelement = unique_element[i];
+					unique_element[i] = unique_element[j];
+					unique_element[j] = tempelement;
+					
+					int temp=uniquefreq[i];
+					uniquefreq[i]=uniquefreq[j];
+					uniquefreq[j]=temp;
+				}
+				
+				
+			}
+		}
+		
+		for(int i=0;i<counter;i++) {
+			System.out.println(unique_element[i]+" -> "+ uniquefreq[i]);
+		}
+		
+
+//		for (int i = 0; i < len; i++) {
+//
+//			boolean counted = false;
+//			int increment = 1;
+//
+//			for (int k = 0; k < i; k++) {
+//				if (array[i] == array[k]) {
+//					counted = true;
+//				}
+//			}
+//			if (counted)
+//				continue;
+//
+//			for (int j = i + 1; j < len; j++) {
+//				if (array[i] == array[j]) {
+//					increment++;
+//
+//				}
+//
+//			}
+//			if (increment == maxcount) {
+//				System.out.println(array[i] + " -> " + maxcount);
+//
+//			}
+//
+//		}
+
+	}
+
+}
