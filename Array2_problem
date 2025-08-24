@@ -1,0 +1,125 @@
+package zoho_test;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class Remove_duplicate {
+
+	public static void main(String[] args) {
+
+//		int arr[] = { 1, 2, 3, 4, 5 };
+//
+////		int sums = 15;
+////
+////		for (int i = 0; i < arr.length; i++) {
+////			for (int j = i + 1; j < arr.length; j++) {
+////				if (arr[i] + arr[j] == sums) {
+////					System.out.println(arr[i] + " " + arr[j]);
+////				}
+////			}
+////		}
+//		// want to rotate by right
+//		// left roatate lets try it now broooo
+//		int n = arr.length;
+//		int k = 2;
+//		k = k%n;
+////arr,start,end
+//
+////		System.out.println(Arrays.toString(arr));
+////		
+////		//rotate elements by right
+////		reverse(arr, 0, n - 1);
+////		reverse(arr, 0, n - k - 1);
+////		reverse(arr, n - k, n - 1);
+////		//[1, 2, 3, 4, 5]
+////		//[3, 4, 5, 1, 2]
+////		System.out.println(Arrays.toString(arr));
+//
+//		System.out.println(Arrays.toString(arr));
+//
+//		// rotate elements by left
+//
+//		reverse(arr, 0, n - 1);
+//		reverse(arr, 0, k - 1);
+//		reverse(arr, k, n - 1);
+////				[1, 2, 3, 4, 5]
+////				[4, 5, 1, 2, 3]
+//		System.out.println(Arrays.toString(arr));
+//
+//	}
+//
+//	public static int[] reverse(int[] array, int start, int end) {
+//
+//		while (start < end) {
+//
+//			int temp = array[start];
+//			array[start] = array[end];
+//			array[end] = temp;
+//			start++;
+//			end--;
+//
+//		}
+//		return array;
+
+		int[] arr = { 1, 2, 3, 5 };
+		int n = 5;
+
+//		int sum=0;
+//		for(int a:arr) {
+//			sum+=a;
+//		}
+//		int formula=n*(n+1)/2;
+//		int ans=sum-formula;
+//		System.out.println(ans);
+
+//		int xor1 = 0;
+//		for (int i = 1; i <= n; i++) {
+//			xor1 = xor1 ^ i;
+//		}
+//		int xor2 = 0;
+//		for (int a : arr) {
+//			xor2 = xor2 ^ a;
+//		}
+//		int res = xor1 ^ xor2;
+//		System.out.println(res);
+
+		int arr1[] = { 1, 4, 7, 8, 10 };
+		int arr2[] = { 2, 3, 9 };
+		int pointer1 = 0, pointer2 = 0;
+		int len1 = arr1.length-1;
+		int len2 = arr2.length-1;
+
+		while (pointer1 < len1) {
+			if (arr1[pointer1] > arr2[pointer2]) {
+				int temp = arr1[pointer1];
+				arr1[pointer1] = arr2[pointer2];
+				arr2[pointer2] = temp;
+				
+			}
+			pointer1++;
+
+		}
+		while (pointer2 < len2) {
+			if (arr2[pointer2] < arr1[pointer1]) {
+				int temp=arr2[pointer2];
+				arr2[pointer2] = arr1[pointer1];
+				arr1[pointer1] = temp;
+				
+			}
+			pointer2++;
+		}
+		
+		
+		System.out.println(Arrays.toString(arr1));
+		System.out.println(Arrays.toString(arr2));
+
+		Arrays.sort(arr1);
+		Arrays.sort(arr2);
+
+		System.out.println(Arrays.toString(arr1));
+		System.out.println(Arrays.toString(arr2));
+
+	}
+
+}
